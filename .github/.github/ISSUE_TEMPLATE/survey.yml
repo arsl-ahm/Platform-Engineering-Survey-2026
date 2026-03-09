@@ -1,0 +1,59 @@
+name: "2026 Platform Engineering & AI-Native Survey"
+description: "Share your insights on Kubernetes sprawl and AI-Native infrastructure bottlenecks."
+title: "[Survey]: "
+labels: ["community-insight", "gtm-data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Help us define the "Sanity Layer" for Developer Platforms.
+        Your input helps build a community report on overcoming the complexity of Managed Kubernetes and AI-Native scaling.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: "What is your primary focus?"
+      options:
+        - "Platform Engineering"
+        - "SRE / Infrastructure"
+        - "Developer Experience (DevEx)"
+        - "AI/ML Ops"
+        - "CTO / Engineering Leadership"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: stack
+    attributes:
+      label: "Which Managed Services are you currently fighting? (Select all that apply)"
+      options:
+        - label: "EKS (AWS)"
+        - label: "GKE (Google)"
+        - label: "AKS (Azure)"
+        - label: "OCI (Oracle)"
+        - label: "Managed Kubernetes Platform (Self-Hosted/Hybrid)"
+
+  - type: textarea
+    id: pain-point
+    attributes:
+      label: "What is the #1 thing slowing down your Developer Velocity right now?"
+      placeholder: "e.g., 'Yamlexity', 'Secret management', 'GPU availability for AI workloads'..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-readiness
+    attributes:
+      label: "How prepared is your current platform for AI-Native workloads?"
+      options:
+        - "We are ready (GPUs are orchestrated and stable)"
+        - "We are struggling with scaling LLMs"
+        - "We are still trying to get standard K8s right"
+        - "Not a priority yet"
+
+  - type: input
+    id: contact
+    attributes:
+      label: "Want the final report? (Optional)"
+      description: "Leave your email or LinkedIn handle if you want the benchmarking results."
+      placeholder: "email@example.com"
